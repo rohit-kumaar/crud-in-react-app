@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const URL = "http://localhost:3001/users";
 
@@ -17,6 +17,16 @@ function Home() {
         console.log(err);
       });
   }, []);
+
+  const handleDelete = (id) => {
+    const confirm = window.confirm("Would You Like To Delete?");
+    if (confirm) {
+      axios
+        .delete(`http://localhost:3001/users/${id}`)
+        .then(() => location.reload())
+        .catch((err) => console.log(err));
+    }
+  };
 
   return (
     <>
@@ -48,8 +58,15 @@ function Home() {
                     <Link to={`/read/${user.id}`} className="btn btn-primary">
                       Read
                     </Link>
-                    <Link to={`/update/${user.id}`} className="btn btn-success">Update</Link>
-                    <button className="btn btn-danger">Delete</button>
+                    <Link to={`/update/${user.id}`} className="btn btn-success">
+                      Update
+                    </Link>
+                    <button
+                      className="btn btn-danger"
+                      onClick={(e) => handleDelete(user.id)}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}
