@@ -45,7 +45,9 @@ function Home() {
                   <td>{user.email}</td>
                   <td>{user.phone}</td>
                   <td className="d-flex gap-3 ">
-                    <button className="btn btn-primary">Read</button>
+                    <Link to={`/read/${user.id}`} className="btn btn-primary">
+                      Read
+                    </Link>
                     <button className="btn btn-success">Update</button>
                     <button className="btn btn-danger">Delete</button>
                   </td>
