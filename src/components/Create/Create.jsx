@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
+import { RiArrowGoBackFill } from "react-icons/ri";
+import { IoCheckmarkDoneCircle } from "react-icons/io5";
 
 const URL = "http://localhost:3001/users";
 
@@ -27,6 +29,11 @@ function Create() {
       .post(URL, values)
       .then((res) => {
         console.log(res);
+
+        // data.name == "" && values.email == "" && values.phone == ""
+        // ? alert("Please fill the blank space")
+        // :
+
         navigate("/");
       })
       .catch((err) => {
@@ -71,10 +78,15 @@ function Create() {
                 onChange={handleChange}
               />
             </div>
-            <button className="btn btn-success me-3">Submit</button>
-            <Link to="/" className="btn btn-primary">
-              Back
-            </Link>
+
+            <div className="d-flex align-items-center">
+              <button className="btn btn-success me-3">
+                Submit <IoCheckmarkDoneCircle />
+              </button>
+              <Link to="/" className="btn btn-primary">
+                Back <RiArrowGoBackFill />
+              </Link>
+            </div>
           </form>
         </div>
       </div>

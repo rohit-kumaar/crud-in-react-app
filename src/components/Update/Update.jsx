@@ -37,6 +37,7 @@ function Update() {
 
   const handleUpdate = (event) => {
     event.preventDefault();
+
     axios
       .put(URL, values)
       .then((res) => {
@@ -93,6 +94,7 @@ function Update() {
               <button className="btn btn-success me-3">
                 Update <MdOutlineUpdate />
               </button>
+
               <Link to="/" className="btn btn-primary">
                 Back <RiArrowGoBackFill />
               </Link>
