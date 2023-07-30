@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useTitle } from "../hooks/useTitle";
+import { useTitle } from "../../hooks/useTitle";
 
 const URL = "http://localhost:3001/users";
 

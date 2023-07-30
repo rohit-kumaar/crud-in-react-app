@@ -1,9 +1,9 @@
 import React, { Suspense, lazy } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-const Home = lazy(() => import("./components/Home.jsx"));
-const Create = lazy(() => import("./components/Create.jsx"));
-const Update = lazy(() => import("./components/Update.jsx"));
-const Read = lazy(() => import("./components/Read.jsx"));
+const Home = lazy(() => import("./components/Home/Home.jsx"));
+const Create = lazy(() => import("./components/Create/Create.jsx"));
+const Update = lazy(() => import("./components/Update/Update.jsx"));
+const Read = lazy(() => import("./components/Read/Read.jsx"));
 
 const router = createBrowserRouter([
   {

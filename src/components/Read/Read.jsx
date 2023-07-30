@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { AiOutlineEdit } from "react-icons/ai";
+import { RiArrowGoBackFill } from "react-icons/ri";
 import { Link, useParams } from "react-router-dom";
-import { useTitle } from "../hooks/useTitle";
+import { useTitle } from "../../hooks/useTitle";
 
 function Read() {
   useTitle("Read");
@@ -36,12 +38,14 @@ function Read() {
             <strong>Phone : {userData.phone}</strong>
           </div>
 
-          <Link to={`/update/${id}`} className="btn btn-success me-3">
-            Edit
-          </Link>
-          <Link to="/" className="btn btn-primary">
-            Back
-          </Link>
+          <div className="d-flex align-items-center">
+            <Link to={`/update/${id}`} className="btn btn-success me-3">
+              Edit <AiOutlineEdit />
+            </Link>
+            <Link to="/" className="btn btn-primary">
+              Back <RiArrowGoBackFill />
+            </Link>
+          </div>
         </div>
       </div>
     </>

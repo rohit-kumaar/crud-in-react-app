@@ -1,7 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { BiSolidBookReader } from "react-icons/bi";
+import { BsPersonFillAdd } from "react-icons/bs";
+import { MdDelete, MdOutlineUpdate } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { useTitle } from "../hooks/useTitle";
+import { useTitle } from "../../hooks/useTitle";
+import "./Home.scss";
 
 const URL = "http://localhost:3001/users";
 
@@ -37,8 +41,8 @@ function Home() {
         <h1>List of Users</h1>
 
         <div className="w-75 rounded bg-white shadow p-4">
-          <Link to="/create" className="btn btn-dark ">
-            Add +
+          <Link to="/create" className="btn btn-dark add-btn">
+            Add <BsPersonFillAdd />
           </Link>
 
           <table className="table">
@@ -60,16 +64,16 @@ function Home() {
                   <td>{user.phone}</td>
                   <td className="d-flex gap-3 ">
                     <Link to={`/read/${user.id}`} className="btn btn-primary">
-                      Read
+                      Read <BiSolidBookReader />
                     </Link>
                     <Link to={`/update/${user.id}`} className="btn btn-success">
-                      Update
+                      Update <MdOutlineUpdate />
                     </Link>
                     <button
                       className="btn btn-danger"
                       onClick={(e) => handleDelete(user.id)}
                     >
-                      Delete
+                      Delete <MdDelete />
                     </button>
                   </td>
                 </tr>

@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { MdOutlineUpdate } from "react-icons/md";
+import { RiArrowGoBackFill } from "react-icons/ri";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useTitle } from "../hooks/useTitle";
+import { useTitle } from "../../hooks/useTitle";
 
 function Update() {
   useTitle("Update");
@@ -86,10 +88,15 @@ function Update() {
                 onChange={handleChange}
               />
             </div>
-            <button className="btn btn-success me-3">Update</button>
-            <Link to="/" className="btn btn-primary">
-              Back
-            </Link>
+
+            <div className="d-flex align-items-center">
+              <button className="btn btn-success me-3">
+                Update <MdOutlineUpdate />
+              </button>
+              <Link to="/" className="btn btn-primary">
+                Back <RiArrowGoBackFill />
+              </Link>
+            </div>
           </form>
         </div>
       </div>
