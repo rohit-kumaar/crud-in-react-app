@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useTitle } from "../hooks/useTitle";
 
 function Read() {
+  useTitle("Read");
   const [userData, setUserData] = useState([]);
   const { id } = useParams();
   const URL = `http://localhost:3001/users/${id}`;

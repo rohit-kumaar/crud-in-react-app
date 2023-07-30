@@ -1,27 +1,42 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Create from "./components/Create";
-import Home from "./components/Home";
-import Read from "./components/Read";
-import Update from "./components/Update";
-import "bootstrap/dist/css/bootstrap.min.css";
+const Home = lazy(() => import("./components/Home.jsx"));
+const Create = lazy(() => import("./components/Create.jsx"));
+const Update = lazy(() => import("./components/Update.jsx"));
+const Read = lazy(() => import("./components/Read.jsx"));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <Suspense fallback={"Loading..."}>
+        <Home />
+      </Suspense>
+    ),
   },
   {
     path: "/create",
-    element: <Create />,
+    element: (
+      <Suspense fallback={"Loading..."}>
+        <Create />
+      </Suspense>
+    ),
   },
   {
     path: "/update/:id",
-    element: <Update />,
+    element: (
+      <Suspense fallback={"Loading..."}>
+        <Update />
+      </Suspense>
+    ),
   },
   {
     path: "/read/:id",
-    element: <Read />,
+    element: (
+      <Suspense fallback={"Loading..."}>
+        <Read />
+      </Suspense>
+    ),
   },
 ]);
 

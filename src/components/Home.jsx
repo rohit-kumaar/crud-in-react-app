@@ -1,10 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useTitle } from "../hooks/useTitle";
 
 const URL = "http://localhost:3001/users";
 
 function Home() {
+  useTitle("Home");
+
   const [userData, setUserData] = useState([]);
 
   useEffect(() => {

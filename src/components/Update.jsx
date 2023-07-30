@@ -1,8 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { useTitle } from "../hooks/useTitle";
 
 function Update() {
+  useTitle("Update");
+
   const [values, setValues] = useState({
     name: "",
     email: "",
