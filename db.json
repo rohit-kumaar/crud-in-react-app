@@ -1,23 +1,23 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Rohit Kumar",
-      "username": "Ricky",
-      "email": "rohit@gmail.com",
-      "phone": "9668231410",
-      "website": "https://github.com/rohit-kumaar"
-    },
-    {
       "id": 2,
-      "name": "Rohit Kumar",
-      "username": "Ricky",
-      "email": "rohit@gmail.com",
-      "phone": "9668231410",
-      "website": "https://github.com/rohit-kumaar"
+      "name": "Jane Smith",
+      "username": "janesmith456",
+      "email": "jane.smith@example.com",
+      "phone": "987-654-3210",
+      "website": "https://www.example.com/janesmith"
     },
     {
       "id": 3,
+      "name": "Michael Johnson",
+      "username": "michaelj",
+      "email": "michael.johnson@example.com",
+      "phone": "555-555-5555",
+      "website": "https://www.example.com/michael"
+    },
+    {
+      "id": 4,
       "name": "Rohit Kumar",
       "username": "Ricky",
       "email": "rohit@gmail.com",
@@ -25,12 +25,52 @@
       "website": "https://github.com/rohit-kumaar"
     },
     {
-      "id": 4,
-      "name": "Rohit Kumar ",
-      "username": "Ricky",
-      "email": "rohit@gmail.com",
-      "phone": "9668231410",
-      "website": "https://github.com/rohit-kumaar"
+      "id": 5,
+      "name": "Emily Anderson",
+      "username": "emily_a",
+      "email": "emily.anderson@example.com",
+      "phone": "444-444-4444",
+      "website": "https://www.example.com/emily"
+    },
+    {
+      "id": 6,
+      "name": "William Turner",
+      "username": "will_t",
+      "email": "william.turner@example.com",
+      "phone": "777-777-7777",
+      "website": "https://www.example.com/william"
+    },
+    {
+      "id": 7,
+      "name": "Sophia Lee",
+      "username": "sophia123",
+      "email": "sophia.lee@example.com",
+      "phone": "222-222-2222",
+      "website": "https://www.example.com/sophia"
+    },
+    {
+      "id": 8,
+      "name": "James Williams",
+      "username": "james_w",
+      "email": "james.williams@example.com",
+      "phone": "999-999-9999",
+      "website": "https://www.example.com/james"
+    },
+    {
+      "id": 9,
+      "name": "Olivia Brown",
+      "username": "olivia_b",
+      "email": "olivia.brown@example.com",
+      "phone": "777-888-9999",
+      "website": "https://www.example.com/olivia"
+    },
+    {
+      "id": 10,
+      "name": "Alexander Davis",
+      "username": "alex_d",
+      "email": "alexander.davis@example.com",
+      "phone": "111-222-3333",
+      "website": "https://www.example.com/alexander"
     }
   ]
 }

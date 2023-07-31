@@ -1,15 +1,16 @@
 import React, { Suspense, lazy } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-const Home = lazy(() => import("./components/Home/Home.jsx"));
-const Create = lazy(() => import("./components/Create/Create.jsx"));
-const Update = lazy(() => import("./components/Update/Update.jsx"));
-const Read = lazy(() => import("./components/Read/Read.jsx"));
+import Loading from "./components/Loading/Loading.jsx";
+const Home = lazy(() => import("./components/Home.jsx"));
+const Create = lazy(() => import("./components/Create.jsx"));
+const Update = lazy(() => import("./components/Update.jsx"));
+const Read = lazy(() => import("./components/Read.jsx"));
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Suspense fallback={"Loading..."}>
+      <Suspense fallback={<Loading />}>
         <Home />
       </Suspense>
     ),
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
   {
     path: "/create",
     element: (
-      <Suspense fallback={"Loading..."}>
+      <Suspense fallback={<Loading />}>
         <Create />
       </Suspense>
     ),
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
   {
     path: "/update/:id",
     element: (
-      <Suspense fallback={"Loading..."}>
+      <Suspense fallback={<Loading />}>
         <Update />
       </Suspense>
     ),
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
   {
     path: "/read/:id",
     element: (
-      <Suspense fallback={"Loading..."}>
+      <Suspense fallback={<Loading />}>
         <Read />
       </Suspense>
     ),

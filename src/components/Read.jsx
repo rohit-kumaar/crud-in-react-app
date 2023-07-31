@@ -3,17 +3,17 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import { Link, useParams } from "react-router-dom";
-import { useTitle } from "../../hooks/useTitle";
+import { MAIN_URL } from "../../config";
+import { useTitle } from "../hooks/useTitle";
 
 function Read() {
   useTitle("Read");
   const [userData, setUserData] = useState([]);
   const { id } = useParams();
-  const URL = `http://localhost:3001/users/${id}`;
 
   useEffect(() => {
     axios
-      .get(URL)
+      .get(`${MAIN_URL}/users/${id}`)
       .then((res) => {
         setUserData(res.data);
       })

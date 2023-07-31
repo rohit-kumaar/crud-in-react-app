@@ -5,3 +5,14 @@
   justify-content: center;
   gap: 6px;
 }
+
+table {
+  tbody {
+    tr {
+      td {
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+    }
+  }
+}

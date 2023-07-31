@@ -1,12 +1,13 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { MdOutlineUpdate } from "react-icons/md";
+import React, { useState } from "react";
+import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { RiArrowGoBackFill } from "react-icons/ri";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { useTitle } from "../../hooks/useTitle";
+import { Link, useNavigate } from "react-router-dom";
+import { MAIN_URL } from "../../config";
+import { useTitle } from "../hooks/useTitle";
 
-function Update() {
-  useTitle("Update");
+function Create() {
+  useTitle("Create");
 
   const [values, setValues] = useState({
     name: "",
@@ -16,30 +17,21 @@ function Update() {
 
   const navigate = useNavigate();
 
-  const { id } = useParams();
-  const URL = `http://localhost:3001/users/${id}`;
-
-  useEffect(() => {
-    axios
-      .get(URL)
-      .then((res) => {
-        setValues(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setValues((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleUpdate = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
+    if (!values.name || !values.email || !values.phone) {
+      alert("Please fill in all the required fields.");
+      return;
+    }
+
     axios
-      .put(URL, values)
+      .post(`${MAIN_URL}/users`, values)
       .then((res) => {
         console.log(res);
         navigate("/");
@@ -53,9 +45,9 @@ function Update() {
     <>
       <div className="d-flex align-items-center justify-content-center w-100 vh-100 bg-light">
         <div className="w-50 border bg-white shadow px-5 pt-3 pb-5 rounded">
-          <h1>Update User</h1>
+          <h1>Add A User</h1>
 
-          <form onSubmit={handleUpdate}>
+          <form onSubmit={handleSubmit}>
             <div className="mb-2">
               <label htmlFor="name">Name :</label>
               <input
@@ -63,7 +55,6 @@ function Update() {
                 name="name"
                 className="form-control"
                 placeholder="Enter Your Name"
-                value={values.name}
                 onChange={handleChange}
               />
             </div>
@@ -74,7 +65,6 @@ function Update() {
                 name="email"
                 className="form-control"
                 placeholder="Enter Your Email"
-                value={values.email}
                 onChange={handleChange}
               />
             </div>
@@ -85,16 +75,14 @@ function Update() {
                 name="phone"
                 className="form-control"
                 placeholder="Enter Your Phone Number"
-                value={values.phone}
                 onChange={handleChange}
               />
             </div>
 
             <div className="d-flex align-items-center">
               <button className="btn btn-success me-3">
-                Update <MdOutlineUpdate />
+                Submit <IoCheckmarkDoneCircle />
               </button>
-
               <Link to="/" className="btn btn-primary">
                 Back <RiArrowGoBackFill />
               </Link>
@@ -106,4 +94,4 @@ function Update() {
   );
 }
 
-export default Update;
+export default Create;
