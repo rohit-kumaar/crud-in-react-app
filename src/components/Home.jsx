@@ -36,7 +36,7 @@ function Home() {
 
   return (
     <>
-      <div className="d-flex flex-column align-items-center justify-content-center vh-100 bg-light">
+      <div className="d-flex flex-column align-items-center justify-content-center px-5 py-3 bg-light">
         <h1>List of Users</h1>
 
         <div className=" rounded bg-white shadow p-4">
