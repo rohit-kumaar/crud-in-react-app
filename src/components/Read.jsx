@@ -5,6 +5,7 @@ import { RiArrowGoBackFill } from "react-icons/ri";
 import { Link, useParams } from "react-router-dom";
 import { MAIN_URL } from "../../config";
 import { useTitle } from "../hooks/useTitle";
+import { ROUTE_PATH } from "../router/publicRouter";
 
 function Read() {
   useTitle("Read");
@@ -39,10 +40,13 @@ function Read() {
           </div>
 
           <div className="d-flex align-items-center">
-            <Link to={`/update/${id}`} className="btn btn-success me-3">
+            <Link
+              to={`${ROUTE_PATH.Update}/${id}`}
+              className="btn btn-success me-3"
+            >
               Edit <AiOutlineEdit />
             </Link>
-            <Link to="/" className="btn btn-primary">
+            <Link to={ROUTE_PATH.Default} className="btn btn-primary">
               Back <RiArrowGoBackFill />
             </Link>
           </div>

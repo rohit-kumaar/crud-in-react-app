@@ -5,6 +5,7 @@ import { RiArrowGoBackFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import { MAIN_URL } from "../../config";
 import { useTitle } from "../hooks/useTitle";
+import { ROUTE_PATH } from "../router/publicRouter";
 
 function Create() {
   useTitle("Create");
@@ -34,7 +35,7 @@ function Create() {
       .post(`${MAIN_URL}/users`, values)
       .then((res) => {
         console.log(res);
-        navigate("/");
+        navigate(ROUTE_PATH.Default);
       })
       .catch((err) => {
         console.log(err);
@@ -83,7 +84,7 @@ function Create() {
               <button className="btn btn-success me-3">
                 Submit <IoCheckmarkDoneCircle />
               </button>
-              <Link to="/" className="btn btn-primary">
+              <Link to={ROUTE_PATH.Default} className="btn btn-primary">
                 Back <RiArrowGoBackFill />
               </Link>
             </div>

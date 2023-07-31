@@ -5,6 +5,7 @@ import { RiArrowGoBackFill } from "react-icons/ri";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { MAIN_URL } from "../../config";
 import { useTitle } from "../hooks/useTitle";
+import { ROUTE_PATH } from "../router/publicRouter";
 
 function Update() {
   useTitle("Update");
@@ -41,7 +42,7 @@ function Update() {
       .put(`${MAIN_URL}/users/${id}`, values)
       .then((res) => {
         console.log(res);
-        navigate("/");
+        navigate(ROUTE_PATH.Default);
       })
       .catch((err) => {
         console.log(err);
@@ -94,7 +95,7 @@ function Update() {
                 Update <MdOutlineUpdate />
               </button>
 
-              <Link to="/" className="btn btn-primary">
+              <Link to={ROUTE_PATH.Default} className="btn btn-primary">
                 Back <RiArrowGoBackFill />
               </Link>
             </div>

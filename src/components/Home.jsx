@@ -6,6 +6,7 @@ import { MdDelete, MdOutlineUpdate } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { MAIN_URL } from "../../config";
 import { useTitle } from "../hooks/useTitle";
+import { ROUTE_PATH } from "../router/publicRouter";
 
 function Home() {
   useTitle("Home");
@@ -39,7 +40,7 @@ function Home() {
         <h1>List of Users</h1>
 
         <div className=" rounded bg-white shadow p-4">
-          <Link to="/create" className="btn btn-dark add-btn">
+          <Link to={ROUTE_PATH.Create} className="btn btn-dark add-btn">
             Add <BsPersonFillAdd />
           </Link>
 
@@ -67,10 +68,16 @@ function Home() {
                     </Link>
                   </td>
                   <td className="d-flex gap-3 ">
-                    <Link to={`/read/${user.id}`} className="btn btn-primary">
+                    <Link
+                      to={`${ROUTE_PATH.Read}/${user.id}`}
+                      className="btn btn-primary"
+                    >
                       Read <BiSolidBookReader />
                     </Link>
-                    <Link to={`/update/${user.id}`} className="btn btn-success">
+                    <Link
+                      to={`${ROUTE_PATH.Update}/${user.id}`}
+                      className="btn btn-success"
+                    >
                       Update <MdOutlineUpdate />
                     </Link>
                     <button

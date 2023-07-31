@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Loading from "./components/Loading/Loading.jsx";
+import { ROUTE_PATH } from "./router/publicRouter.js";
 const Home = lazy(() => import("./components/Home.jsx"));
 const Create = lazy(() => import("./components/Create.jsx"));
 const Update = lazy(() => import("./components/Update.jsx"));
@@ -8,7 +9,7 @@ const Read = lazy(() => import("./components/Read.jsx"));
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: ROUTE_PATH.Default,
     element: (
       <Suspense fallback={<Loading />}>
         <Home />
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/create",
+    path: ROUTE_PATH.Create,
     element: (
       <Suspense fallback={<Loading />}>
         <Create />
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/update/:id",
+    path: `${ROUTE_PATH.Update}/:id`,
     element: (
       <Suspense fallback={<Loading />}>
         <Update />
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/read/:id",
+    path: `${ROUTE_PATH.Read}/:id`,
     element: (
       <Suspense fallback={<Loading />}>
         <Read />
