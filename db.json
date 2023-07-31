@@ -1,12 +1,20 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": 0,
       "name": "Rohit Kumar",
       "username": "Ricky",
       "email": "rohit@gmail.com",
       "phone": "9668231410",
       "website": "https://github.com/rohit-kumaar"
+    },
+    {
+      "id": 1,
+      "name": "Jane Smith",
+      "username": "janesmith456",
+      "email": "jane.smith@example.com",
+      "phone": "987-654-3210",
+      "website": "https://www.example.com/janesmith"
     },
     {
       "id": 2,

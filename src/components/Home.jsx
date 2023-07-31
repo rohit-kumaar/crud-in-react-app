@@ -25,6 +25,11 @@ function Home() {
   }, []);
 
   const handleDelete = (id) => {
+    if (id === 0) {
+      alert("You can't Delete Admin");
+      return;
+    }
+
     const confirm = window.confirm("Would You Like To Delete?");
     if (confirm) {
       axios
