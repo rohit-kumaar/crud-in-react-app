@@ -1,1 +1,1 @@
-export const MAIN_URL = "https://react-crud-6j8q.onrender.com";
+export const MAIN_URL = "https://react-crud-9ts2.onrender.com";
