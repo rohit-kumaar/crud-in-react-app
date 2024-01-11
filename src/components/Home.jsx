@@ -22,7 +22,7 @@ function Home() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [userData]);
 
   const handleDelete = (id) => {
     if (id === 0) {
@@ -56,38 +56,32 @@ function Home() {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>Website</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              {userData.map((user) => (
-                <tr key={user.id}>
-                  <td>{user.id}</td>
+              {userData.map((user, index) => (
+                <tr key={user._id}>
+                  <td>{index + 1}</td>
                   <td>{user.name}</td>
                   <td>{user.email}</td>
                   <td>{user.phone}</td>
-                  <td>
-                    <Link to={user.website} target="_blank">
-                      {user.website}
-                    </Link>
-                  </td>
                   <td className="d-flex gap-3 ">
                     <Link
-                      to={`${ROUTE_PATH.Read}/${user.id}`}
+                      to={`${ROUTE_PATH.Read}/${user._id}`}
                       className="btn btn-primary"
                     >
                       Read <BiSolidBookReader />
                     </Link>
                     <Link
-                      to={`${ROUTE_PATH.Update}/${user.id}`}
+                      to={`${ROUTE_PATH.Update}/${user._id}`}
                       className="btn btn-success"
                     >
                       Update <MdOutlineUpdate />
                     </Link>
                     <button
                       className="btn btn-danger"
-                      onClick={(e) => handleDelete(user.id)}
+                      onClick={(e) => handleDelete(user._id)}
                     >
                       Delete <MdDelete />
                     </button>

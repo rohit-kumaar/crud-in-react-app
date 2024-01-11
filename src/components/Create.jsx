@@ -34,7 +34,6 @@ function Create() {
     axios
       .post(`${MAIN_URL}/users`, values)
       .then((res) => {
-        console.log(res);
         navigate(ROUTE_PATH.Default);
       })
       .catch((err) => {

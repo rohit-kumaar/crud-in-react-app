@@ -41,7 +41,7 @@ function Read() {
 
           <div className="d-flex align-items-center">
             <Link
-              to={`${ROUTE_PATH.Update}/${id}`}
+              to={`${ROUTE_PATH.Update}/${userData._id}`}
               className="btn btn-success me-3"
             >
               Edit <AiOutlineEdit />
