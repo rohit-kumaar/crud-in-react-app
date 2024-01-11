@@ -32,7 +32,7 @@ function Create() {
     }
 
     axios
-      .post(`${MAIN_URL}/users`, values)
+      .post(`${MAIN_URL}/users/create`, values)
       .then((res) => {
         navigate(ROUTE_PATH.Default);
       })
