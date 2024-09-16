@@ -11,6 +11,7 @@ function Read() {
   useTitle("Read");
   const [userData, setUserData] = useState([]);
   const { id } = useParams();
+  console.log(id);
 
   useEffect(() => {
     axios
@@ -30,18 +31,18 @@ function Read() {
           <h1>Detail of User</h1>
 
           <div className="mb-2">
-            <strong>Name : {userData.name}</strong>
+            <strong>Name : {userData?.name}</strong>
           </div>
           <div className="mb-2">
-            <strong>Email : {userData.email}</strong>
+            <strong>Email : {userData?.email}</strong>
           </div>
           <div className="mb-2">
-            <strong>Phone : {userData.phone}</strong>
+            <strong>Phone : {userData?.phone}</strong>
           </div>
 
           <div className="d-flex align-items-center">
             <Link
-              to={`${ROUTE_PATH.Update}/${userData._id}`}
+              to={`${ROUTE_PATH.Update}/${userData.id}`}
               className="btn btn-success me-3"
             >
               Edit <AiOutlineEdit />
